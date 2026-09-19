@@ -19,6 +19,8 @@
     display:flex; align-items:center; justify-content:center;
     padding:16px; min-height:100vh; -webkit-user-select:none; user-select:none;
   }
+  /* dashboard can be taller than the screen: top-align so every row is reachable */
+  body.dash-mode{align-items:flex-start}
   h1,h2,h3{font-family:Georgia,'Times New Roman',serif; font-weight:normal}
   .wrap{width:100%; max-width:620px}
   .card{
@@ -1081,6 +1083,7 @@ function renderDashboard(){
   const params=new URLSearchParams(location.search);
   if(params.get('view')==='full'){
     const wrap=document.querySelector('.wrap'); if(wrap) wrap.style.display='none';
+    document.body.classList.add('dash-mode');
     initDashboard();
   } else {
     const dash=$('dashScreen'); if(dash) dash.style.display='none';
