@@ -19,9 +19,8 @@
     display:flex; align-items:center; justify-content:center;
     padding:16px; min-height:100vh; -webkit-user-select:none; user-select:none;
   }
-  /* dashboard can be taller than the screen: top-align and allow natural height so every row is reachable */
-  html.dash-mode{height:auto}
-  body.dash-mode{align-items:flex-start; height:auto; min-height:100vh}
+  /* dashboard can be taller than the screen: switch body off flex-centring and let the page scroll normally */
+  html.dash-mode, body.dash-mode{height:auto; min-height:100vh; display:block; overflow-y:auto}
   h1,h2,h3{font-family:Georgia,'Times New Roman',serif; font-weight:normal}
   .wrap{width:100%; max-width:620px}
   .card{
@@ -153,7 +152,7 @@
   .myrank .lbl{font-size:15px; color:var(--ink)}
 
   /* ---- Teacher dashboard ---- */
-  .dashwrap{width:100%; max-width:960px; margin:0 auto}
+  .dashwrap{width:100%; max-width:960px; margin:0 auto; padding:24px 0}
   .dashcard{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:26px 28px}
   .dashhead{display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:20px; flex-wrap:wrap}
   .dashhead h1{font-size:26px; color:var(--ink)}
